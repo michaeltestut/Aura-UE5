@@ -26,10 +26,13 @@ class AURA_API AAuraCharacter : public ABaseCharacter
 
 public:
 	AAuraCharacter();
+	virtual void PossessedBy(AController* NewController) override;
+	virtual void OnRep_PlayerState() override;
 
 protected:
 
 private:
+	void InitAbilityActorInfo();
 public:
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
